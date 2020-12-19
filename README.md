@@ -29,3 +29,6 @@ Fri Nov 27 20:47:34 2020
 ## Knowledge Distillation
 
 ![Kd](https://github.com/ashwinpn/A-comprehensive-evaluation-of-the-sentiment-analysis-on-the-cloud/blob/main/resources/kd.png)
+
+## Deploying the web application using Kubernetes
+![demo](https://github.com/ashwinpn/A-comprehensive-evaluation-of-the-sentiment-analysis-on-the-cloud/blob/main/resources/caml_demo.gif)
