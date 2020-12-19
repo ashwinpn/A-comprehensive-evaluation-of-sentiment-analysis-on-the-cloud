@@ -31,4 +31,15 @@ Fri Nov 27 20:47:34 2020
 ![Kd](https://github.com/ashwinpn/A-comprehensive-evaluation-of-the-sentiment-analysis-on-the-cloud/blob/main/resources/kd.png)
 
 ## Deploying the web application using Kubernetes
+Deployed on the Google Kubernetes Engine
+```bash
+kubectl create -f dply.yaml
+
+kubectl get pods
+
+kubectl get deployments
+
+kubectl expose deployment sentiment-inference-service --type=LoadBalancer --port 80 --target-port 8080
+```
+
 ![demo](https://github.com/ashwinpn/A-comprehensive-evaluation-of-the-sentiment-analysis-on-the-cloud/blob/main/resources/caml_demo.gif)
