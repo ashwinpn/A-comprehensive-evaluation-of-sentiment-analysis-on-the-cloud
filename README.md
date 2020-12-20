@@ -30,6 +30,18 @@ Fri Nov 27 20:47:34 2020
 
 ![Kd](https://github.com/ashwinpn/A-comprehensive-evaluation-of-the-sentiment-analysis-on-the-cloud/blob/main/resources/kd.png)
 
+
+- Knowledge distillation is a method by which a small model is trained to imitate the
+behaviour of a large model, seeking to reproduce similar results as the larger model.
+Basically, it compresses the bigger model [the teacher] into a smaller model [student].
+
+- When thinking about real world applications, successfully running smaller models with
+similar performance metrics and accuracy values would enable us to ensure that
+machine learning / NLP based web applications which require large models to perform
+inference can function seamlessly on mobile devices too [Otherwise we might need
+costly GPU servers to maintain scalability].
+
+
 ## Deploying the web application using Kubernetes
 Deployed on the Google Kubernetes Engine.
 We deploy it as a web application with
@@ -52,3 +64,29 @@ kubectl expose deployment sentiment-inference-service --type=LoadBalancer --port
 ```
 
 ![demo](https://github.com/ashwinpn/A-comprehensive-evaluation-of-the-sentiment-analysis-on-the-cloud/blob/main/resources/caml_demo.gif)
+
+## Parameter Tuning
+```bash
+====================================
+Dropout = 0.5:
+peak memory: 2357.59 MiB, increment: 20.79 MiB
+Epoch: 05 | Epoch Time: 0m 30s
+Train Loss: 0.074 | Train Acc: 97.57%
+Val. Loss: 0.371 | Val. Acc: 87.51%
+Test Loss: 0.341 | Test Acc: 85.46%
+
+Dropout = 0.2:
+peak memory: 2448.95 MiB, increment: 0.10 MiB
+Epoch: 05 | Epoch Time: 0m 30s
+Train Loss: 0.047 | Train Acc: 98.97%
+ Val. Loss: 0.320 | Val. Acc: 88.28%
+Test Loss: 0.327 | Test Acc: 85.82%
+
+Dropout = 0.1:
+peak memory: 2468.17 MiB, increment: 0.00 MiB
+Epoch: 05 | Epoch Time: 0m 30s
+Train Loss: 0.032 | Train Acc: 99.54%
+Val. Loss: 0.317 | Val. Acc: 88.44%
+Test Loss: 0.313 | Test Acc: 86.83%
+```
+
