@@ -31,7 +31,16 @@ Fri Nov 27 20:47:34 2020
 ![Kd](https://github.com/ashwinpn/A-comprehensive-evaluation-of-the-sentiment-analysis-on-the-cloud/blob/main/resources/kd.png)
 
 ## Deploying the web application using Kubernetes
-Deployed on the Google Kubernetes Engine
+Deployed on the Google Kubernetes Engine.
+We deploy it as a web application with
+a ```LoadBalancer``` class and ```3 replicaSets``` set the configuration in the deployment .yaml file],
+which ensures both scalability and reliability. That is, with a ```Loadbalancer``` the traffic would be
+evenly distributed across the 3 pods [scalability], and even if one of the pods is not available,
+users can access a successfully running web application due to the other functional pods
+[reliability]. We also expose the application so that it can be accessed externally.
+
+
+
 ```bash
 kubectl create -f dply.yaml
 
