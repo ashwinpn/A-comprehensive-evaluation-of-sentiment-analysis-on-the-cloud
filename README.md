@@ -1,4 +1,4 @@
-# A-comprehensive-evaluation-of-the-sentiment-analysis-on-the-cloud
+# A-comprehensive-evaluation-of-sentiment-analysis-on-the-cloud
 
 Ashwin Nalwade, Mingxi Chen. 
 
