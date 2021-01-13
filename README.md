@@ -117,3 +117,25 @@ Val. Loss: 0.317 | Val. Acc: 88.44%
 Test Loss: 0.313 | Test Acc: 86.83%
 ```
 
+
+## Experiments
+- We make use of the DistilBERT library provided by HuggingFace, one of the leading
+organisations working on NLP and transformers. Compared to the original BERT, which
+has 112,241,409 trainable parameters, DistilBERT has 69,122,049 trainable parameters
+[A reduction of <ins>38.41%</ins>]. This is impressive, considering the fact that we were able to
+reduce the average training time per epoch by <ins>45.59%</ins> [almost half] at the expense of
+just <ins>1.16%</ins> reduction in the test accuracy.
+
+- We built an app for inference [with flask and gunicorn], ran it locally, packaged it
+using docker, uploaded the dockerfile to Docker Hub and deployed it with kubernetes - also ensuring scalability and
+reliability using LoadBalancer and ReplicaSets. We exposed it externally, so
+that it can be accessed from anywhere, and provide it with a smooth UI.
+
+- Compared to other models, a big argument for CNN’s is that they were found to be fast -
+not just for training, but even for inference. Theoretically, this makes sense as
+convolutions are a central part of computer graphics and implemented on a hardware
+level on GPU’s. In quantitative terms, in the time that it takes to train 1 epoch for a
+transformer [4m 21s], we could have trained a CNN for ~17 epochs [and reached
+convergence]. Also, the saved model [.pth] files for a CNN are 10.0 MiB, compared to
+428 MiB for a transformer.
+
