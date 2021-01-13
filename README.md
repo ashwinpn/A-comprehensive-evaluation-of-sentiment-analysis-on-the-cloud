@@ -2,6 +2,11 @@
 
 Ashwin Nalwade, Mingxi Chen. 
 
+## Tech Stack
+Application and Data: Python, Flask, Gunicorn, CSS, spaCy, PyTorch, Pandas, HuggingFace.
+Cloud : Google Cloud Platform (GCP), IBM Cloud, Gradient Cloud by Paperspace.
+Containers : Docker [Docker Hub], Kubernetes, Google Kubernetes Engine.
+
 ## Comparison across different platforms
 
 We test out the different approaches across 3 different cloud platforms, and we analyze the
@@ -25,6 +30,26 @@ Fri Nov 27 20:47:34 2020
 |                               |                      |                 ERR! |
 +-------------------------------+----------------------+----------------------+
 ```
+
+## Neural Network Architecture Decisions
+### Recurrent Neural Networks
+- We make use of packed padded sequences here, which would enable our Recurrent
+Neural Network to process only that part of the sentence which is not padded [and for
+the padded parts the output will be a zero tensor].
+
+- We make use of RNN architecture known as Long Short Term Memory, acronymed
+LSTM. LSTM’s are useful here because they do not suffer from the vanishing gradient
+problem, which your usual RNN’s do. LSTM’s leverage an auxiliary state called a cell
+which is considered analogous to the memory of the LSTM. They also make use of
+numerous gates which manage the flow of information from and to the cell.
+
+- <ins>Regularization</ins>. Having a large number of parameters in the model implies that we
+would have a larger probability of the occurrence of overfitting [That is, train too closely
+on the training data, leading to a high training accuracy and low train error BUT lower
+test, validation accuracies and high test, validation errors]. Thus, regularization is crucial
+to prevent this from occurring. There are various regularization methods like lasso / ridge
+regression, (l1+l2) regression, but we use dropout. Dropout operates by randomly
+deleting neurons within a layer in a forward pass.
 
 ## Knowledge Distillation
 
