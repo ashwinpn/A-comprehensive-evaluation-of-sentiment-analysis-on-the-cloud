@@ -53,6 +53,17 @@ to prevent this from occurring. There are various regularization methods like la
 regression, (l1+l2) regression, but we use dropout. Dropout operates by randomly
 deleting neurons within a layer in a forward pass.
 
+### Transformers
+- We use the BERT (Bidirectional Encoder Representations from Transformers)
+Transformer model, first developed by Devlin et. al
+
+- We make use of the transformers as our embedding layers, and then train the other part
+of the model - it will learn from the representations created by the transformer. We
+leverage a bidirectional gated recurrent unit (GRU) for this.
+
+- The transformers, utilized as embeddings, are forwarded to a GRU to generate
+sentiment predictions for the test sentence.
+
 ## Knowledge Distillation
 
 ![Kd](https://github.com/ashwinpn/A-comprehensive-evaluation-of-the-sentiment-analysis-on-the-cloud/blob/main/resources/kd.png)
