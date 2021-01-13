@@ -4,7 +4,9 @@ Ashwin Nalwade, Mingxi Chen.
 
 ## Tech Stack
 Application and Data: Python, Flask, Gunicorn, CSS, spaCy, PyTorch, Pandas, HuggingFace.
+
 Cloud : Google Cloud Platform (GCP), IBM Cloud, Gradient Cloud by Paperspace.
+
 Containers : Docker [Docker Hub], Kubernetes, Google Kubernetes Engine.
 
 ## Comparison across different platforms
