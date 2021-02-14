@@ -2,14 +2,7 @@
 #
 #
 #     	Cloud and Machine Learning 
-#            Final Project
-#
-#    Ashwin Prakash Nalwade [apn308]
-#      	 Mingxi Chen [mc7805]
-#
-#           New York University	
-# Courant Institute of Mathematical Sciences 
-#
+#            
 #
 #############################################
 
